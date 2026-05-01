@@ -187,8 +187,8 @@
     <div class="reward-cards">
       <div class="reward-pill"><div class="amount">ทุน 20,000</div><div class="label">บาท</div></div>
       <div class="reward-pill"><div class="amount">ทุน 15,000</div><div class="label">บาท</div></div>
-      <div class="reward-pill"><div class="amount">ทุน 10,000</div><div class="label">บาท</div></div>
       <div class="reward-pill"><div class="amount">ฟรีค่าสมัคร</div><div class="label">200 บาท</div></div>
+      <div class="reward-pill"><div class="amount">รางวัลพิเศษ</div><div class="label"></div></div>
     </div>
     <div class="scratch-label">
       <span id="step-label">ขูดเพื่อเผยทุนของคุณ</span>
@@ -235,15 +235,15 @@ const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzmz5RL_I4kzMUKCiF_aI
 const rewards = [
   { num: 'ทุนส่วนลด 20,000 บาท', label: 'สำหรับค่าเล่าเรียน', code: 'SPU-KKN-20K' },
   { num: 'ทุนส่วนลด 15,000 บาท', label: 'สำหรับค่าเล่าเรียน', code: 'SPU-KKN-15K' },
-  { num: 'ทุนส่วนลด 10,000 บาท', label: 'สำหรับค่าเล่าเรียน', code: 'SPU-KKN-10K' },
   { num: 'ฟรีค่าสมัครเรียน', label: 'มูลค่า 200 บาท', code: 'SPU-KKN-FREE' },
+  { num: 'รางวัลพิเศษ', label: 'ติดต่อเจ้าหน้าที่เพื่อรับรางวัล', code: 'SPU-KKN-SPECIAL' },
 ];
 
 const rewardWeights = [
-  { reward: rewards[0], weight: 1  },
-  { reward: rewards[1], weight: 5  },
-  { reward: rewards[2], weight: 10 },
-  { reward: rewards[3], weight: 20 },
+  { reward: rewards[0], weight: 10  },  // 2.5%
+  { reward: rewards[1], weight: 280 },  // 70%
+  { reward: rewards[2], weight: 40  },  // 10%
+  { reward: rewards[3], weight: 70  },  // 17.5%
 ];
 
 let chosen = null, drawing = false, revealed = false;
